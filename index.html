@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择表单模块</title>
+    <style>
+        .form-module {
+            display: none;
+            /* 默认隐藏所有表单模块 */
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="showForm(1)">显示表单1</button>
+    <button onclick="showForm(2)">显示表单2</button>
+    <button onclick="showForm(3)">显示表单3</button>
+
+    <div id="form1" class="form-module">
+        <form action="https://google.com/search">
+            <input type="text" name="q">
+            <input type="submit" value="Google Search">
+        </form>
+    </div>
+
+    <div id="form2" class="form-module">
+        <form action="https://www.google.com.hk/imghp">
+            <input type="text" name="q">
+            <input type="submit" value="Google Search">
+        </form>
+    </div>
+
+    <div id="form3" class="form-module">
+        <form action="https://www.google.com.hk/advanced_search?">
+            <input type="text" name="q">
+            <input type="submit" value="Google Search">
+        </form>
+        </form>
+    </div>
+
+    <script>
+        function showForm(formNumber) {
+            // 隐藏所有表单模块  
+            document.querySelectorAll('.form-module').forEach(function (form) {
+                form.style.display = 'none';
+            });
+
+            // 根据传入的数字显示对应的表单模块  
+            var formToShow = document.getElementById('form' + formNumber);
+            if (formToShow) {
+                formToShow.style.display = 'block';
+            }
+        }  
+    </script>
+
+</body>
+
+</html>
